@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animasi Lucu</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(180deg, #1c3b2f, #000);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+        overflow: hidden;
+    }
+
+    .scene {
+        position: relative;
+        width: 300px;
+        height: 300px;
+    }
+
+    /* KARAKTER */
+    .character {
+        width: 140px;
+        height: 140px;
+        background: #00ff9d;
+        border-radius: 50%;
+        position: absolute;
+        left: 80px;
+        bottom: 40px;
+        animation: jump 2s infinite ease-in-out;
+        box-shadow: 0 0 30px #00ff9d;
+    }
+
+    /* MATA */
+    .eye {
+        width: 18px;
+        height: 18px;
+        background: #000;
+        border-radius: 50%;
+        position: absolute;
+        top: 45px;
+        animation: blink 4s infinite;
+    }
+
+    .eye.left { left: 35px; }
+    .eye.right { right: 35px; }
+
+    /* MULUT */
+    .mouth {
+        width: 40px;
+        height: 20px;
+        border-bottom: 4px solid #000;
+        border-radius: 0 0 50px 50px;
+        position: absolute;
+        bottom: 35px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* BAYANGAN */
+    .shadow {
+        width: 90px;
+        height: 20px;
+        background: rgba(0,0,0,0.5);
+        position: absolute;
+        bottom: 30px;
+        left: 105px;
+        border-radius: 50%;
+        animation: shadow 2s infinite ease-in-out;
+    }
+
+    /* ANIMASI */
+    @keyframes jump {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-70px); }
+    }
+
+    @keyframes shadow {
+        0%, 100% { transform: scale(1); opacity: 0.5; }
+        50% { transform: scale(0.6); opacity: 0.2; }
+    }
+
+    @keyframes blink {
+        0%, 95%, 100% { height: 18px; }
+        96%, 99% { height: 3px; }
+    }
+
+    /* TEKS */
+    .text {
+        position: absolute;
+        bottom: -60px;
+        width: 100%;
+        text-align: center;
+        color: #b6ffe3;
+        font-size: 14px;
+    }
+</style>
+</head>
+<body>
+
+<div class="scene">
+    <div class="shadow"></div>
+
+    <div class="character">
+        <div class="eye left"></div>
+        <div class="eye right"></div>
+        <div class="mouth"></div>
+    </div>
+
+    <div class="text">
+        Hay Sayang 😊
+    </div>
+</div>
+
+</body>
+</html>
